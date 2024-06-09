@@ -139,30 +139,57 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuClose = document.querySelector('.menu-close');
     const menu = document.querySelector('.menu');
     const action = document.querySelector('.action');
+    const body = document.body;
+    let overlay = document.createElement('div');
 
     let clonedMenu = menu.cloneNode(true);
     let clonedAction = action.cloneNode(true);
 
-    
     menuWrapper.appendChild(clonedMenu);
     menuWrapper.appendChild(clonedAction);
 
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    overlay.style.zIndex = '999'; 
+    overlay.style.display = 'none';
+
+   
     hamburger.addEventListener('click', () => {
         console.log("Toggling menu");
         if (menuWrapper.classList.contains('menu-open')) {
             menuWrapper.classList.remove('menu-open');
-            setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 300); 
+            overlay.style.display = 'none';
+            setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 100); 
+            body.removeChild(overlay);
         } else {
+            body.appendChild(overlay); 
+            overlay.style.display = 'block'; 
             menuWrapper.style.transform = 'translateX(0%)';
             menuWrapper.classList.add('menu-open');
         }
     });
 
+    
+    overlay.addEventListener('click', () => {
+        menuWrapper.classList.remove('menu-open');
+        setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 100);
+        overlay.style.display = 'none'; 
+        body.removeChild(overlay);
+    });
+
+    
     menuClose.addEventListener('click', () => { 
         menuWrapper.classList.remove('menu-open');
-        setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 300); 
+        setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 100); 
+        overlay.style.display = 'none'; 
+        body.removeChild(overlay);
     });
 });
+
   
 function animateCounter() {
     const counter = document.getElementById('count');

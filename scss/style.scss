@@ -5,6 +5,12 @@
   }
 }
 
+@mixin desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
 
 * {
   margin: 0;
@@ -147,6 +153,8 @@ nav {
       transform: translateX(0%); 
     }
 
+    
+
     .menu,
     .action {
       display: none;
@@ -193,6 +201,10 @@ p {
   padding: $section-padding;
   gap: $section-gap;
   isolation: isolate;
+
+  @include desktop{
+    gap: 210px;
+  }
 
   @include for-phone-only {
     gap: 40px;
@@ -374,6 +386,10 @@ p {
       z-index: 4;
       width: $article2-aside-first-width;
       height: $size-138;
+
+      @include desktop{
+        left : 730px
+      }
     }
 
     &:last-of-type {
@@ -383,6 +399,9 @@ p {
       z-index: 4;
       width: $size-250;
       height: $article2-aside-last-height;
+      @include desktop{
+        left : 1175px
+      }
 
       div {
         gap: $article2-aside-last-gap;
@@ -761,6 +780,10 @@ footer {
       border: $border-footer-div-first;
       @include for-phone-only {
         width: 100%;
+        border-top: 1px solid #ccc;
+      }
+      @include desktop {
+        width: 90%;
         border-top: 1px solid #ccc;
       }
     }

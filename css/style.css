@@ -217,6 +217,11 @@ p {
   gap: 97px;
   isolation: isolate;
 }
+@media (min-width: 1440px) {
+  #section-1 {
+    gap: 210px;
+  }
+}
 @media (max-width: 600px) {
   #section-1 {
     gap: 40px;
@@ -444,6 +449,11 @@ p {
   width: 330px;
   height: 138px;
 }
+@media (min-width: 1440px) {
+  #article-2 aside:first-of-type {
+    left: 730px;
+  }
+}
 #article-2 aside:last-of-type {
   position: absolute;
   left: 1072px;
@@ -451,6 +461,11 @@ p {
   z-index: 4;
   width: 250px;
   height: 108px;
+}
+@media (min-width: 1440px) {
+  #article-2 aside:last-of-type {
+    left: 1175px;
+  }
 }
 #article-2 aside:last-of-type div {
   gap: 18.5px;
@@ -1040,6 +1055,12 @@ footer > div > div:first-of-type {
 @media (max-width: 600px) {
   footer > div > div:first-of-type {
     width: 100%;
+    border-top: 1px solid #ccc;
+  }
+}
+@media (min-width: 1440px) {
+  footer > div > div:first-of-type {
+    width: 90%;
     border-top: 1px solid #ccc;
   }
 }
