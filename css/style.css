@@ -136,7 +136,7 @@ nav #menu-wrapper {
         -ms-flex-pack: center;
             justify-content: center;
     overflow: hidden;
-    gap: 200px;
+    gap: 100px;
   }
   nav #menu-wrapper .menu,
   nav #menu-wrapper .action {

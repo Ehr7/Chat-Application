@@ -1,219 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join our chat application for seamless, secure communication available 24/7 on all your devices."
+    />
     <link rel="stylesheet" href="css/style.css" />
     <script src="script.js" defer></script>
     <title>Chat Application</title>
     <link rel="icon" href="static/svg/icon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div id="container">
-        <header>
-            <nav>
-                <div class="logo">
-                    <img src="static/svg/icon.svg" alt="Application Logo" />
-                    <p>Chat Application</p>
-                </div>
-                <button class="hamburger" aria-label="Menu"><img src="static/svg/hamburger-menu.svg" alt=""></button>
-                <div id="menu-wrapper">
-                    <button class="menu-close"><img src="static/svg/close-icon.svg" alt=""></button>
-                </div>                  
-                <ul class="menu">
-                    <li><a href="#">Demos</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <div class="action">
-                    <a href="#">Login</a>
-                    <my-button text="Get started free"></my-button>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <section id="section-1">
-                <article id="article-1">
-                    <aside>
-                        <h1>Start chatting with customers, anywhere anytime with our application</h1>
-                        <p>Great software that allows you to chat from any place at any time without any interruption.</p>
-                        <my-button text="Start chatting now"></my-button>
-                    </aside>
-                    <aside>
-                        <div class="photos">
-                            <img src="static/png/photo1.png" alt="Profile photo" />
-                            <img src="static/png/photo2.png" alt="Profile photo" />
-                            <img src="static/png/photo2.png" alt="Profile photo" />
-                        </div>
-                        <div>
-                            <p id="count" data-target="2291">0</p>
-                            <p>Happy customers</p>
-                        </div>
-                        <div>
-                            <p>4.8/5</p>
-                            <p>Rating</p>
-                        </div>
-                    </aside>
-                </article>
-                <article id="article-2">
-                    <div>
-                        <img src="static/png/image-femme-1.png" alt="Woman looking at her phone" />
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <aside>
-                        <div>
-                            <img src="static/png/photo2.png" alt="Profile photo" />
-                            <p>Eli Json</p>
-                        </div>
-                        <p>Great software that allows you to chat from any place at any time without any interruption.</p>
-                    </aside>
-                    <aside>
-                        <div>
-                            <img src="static/png/photo1.png" alt="Profile photo" />
-                            <p>Eli Json</p>
-                        </div>
-                        <p>Great software that allows you to chat from any place at any time without any interruption.</p>
-                    </aside>
-                </article>
-            </section>
-        </main>
+      <header>
+        <nav role="navigation">
+          <div class="logo">
+            <img src="static/svg/icon.svg" alt="logo application" />
+            <p>Chat Application</p>
+          </div>
+          <button class="hamburger" aria-label="Menu">
+            <img src="static/svg/hamburger-menu.svg" alt="open menu" />
+          </button>
+          <div id="menu-wrapper">
+            <button class="menu-close">
+              <img src="static/svg/close-icon.svg" alt="close menu" />
+            </button>
+          </div>
+          <ul class="menu">
+            <li><a href="#demo">Demos</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#page">Pages</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="action">
+            <a href="login.html">Login</a>
+            <my-button role="button" text="Get started free"></my-button>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section id="section-1" id>
+          <article id="article-1">
+            <aside>
+              <h1>
+                Start chatting with customers, anywhere anytime with our
+                application
+              </h1>
+              <p>
+                Great software that allows you to chat from any place at any
+                time without any interruption.
+              </p>
+              <my-button role="button" text="Start chatting now"></my-button>
+            </aside>
+            <aside>
+              <div class="photos">
+                <img
+                  src="static/png/photo1.png"
+                  alt="Profile photo"
+                  loading="lazy"
+                />
+                <img
+                  src="static/png/photo2.png"
+                  alt="Profile photo"
+                  loading="lazy"
+                />
+                <img
+                  src="static/png/photo2.png"
+                  alt="Profile photo"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <p id="count" data-target="2291">0</p>
+                <p>Happy customers</p>
+              </div>
+              <div>
+                <p>4.8/5</p>
+                <p>Rating</p>
+              </div>
+            </aside>
+          </article>
+          <article id="article-2">
+            <div>
+              <img
+                src="static/png/image-femme-1.png"
+                alt="Woman looking at her phone"
+                loading="lazy"
+              />
+              <div></div>
+              <div></div>
+            </div>
+            <aside>
+              <div>
+                <img src="static/png/photo2.png" alt="Profile photo" />
+                <p>Eli Json</p>
+              </div>
+              <p>
+                Great software that allows you to chat from any place at any
+                time without any interruption.
+              </p>
+            </aside>
+            <aside>
+              <div>
+                <img src="static/png/photo1.png" alt="Profile photo" />
+                <p>Eli Json</p>
+              </div>
+              <p>
+                Great software that allows you to chat from any place at any
+                time without any interruption.
+              </p>
+            </aside>
+          </article>
+        </section>
+      </main>
     </div>
     <main id="page-content">
-        <section>
-            <article>
-                <h2>Features for a better experience</h2>
-                <div id="card-container">
-                    <card-component icon="static/svg/camera-icon.svg" title="Video messaging" text="This software is very easy for you to manage you can use it as you wish."></card-component>
-                    <card-component icon="static/svg/wifi-icon.svg" title="Keep safe & private" text="This software is very easy for you to manage you can use it as you wish."></card-component>
-                    <card-component icon="static/svg/timer-icon.svg" title="Save you time" text="This software is very easy for you to manage you can use it as you wish."></card-component>
-                </div>
-            </article>
-        </section>
-        <section>
-            <article>
+      <section id="page">
+        <article>
+          <h2>Features for a better experience</h2>
+          <div id="card-container">
+            <card-component
+              icon="static/svg/camera-icon.svg"
+              title="Video messaging"
+              text="This software is very easy for you to manage you can use it as you wish."
+            ></card-component>
+            <card-component
+              icon="static/svg/wifi-icon.svg"
+              title="Keep safe & private"
+              text="This software is very easy for you to manage you can use it as you wish."
+            ></card-component>
+            <card-component
+              icon="static/svg/timer-icon.svg"
+              title="Save you time"
+              text="This software is very easy for you to manage you can use it as you wish."
+            ></card-component>
+          </div>
+        </article>
+      </section>
+      <section id="about">
+        <article>
+          <div>
+            <img
+              src="static/png/image-femme-2.png"
+              alt="Woman in video call"
+              loading="lazy"
+            />
+            <div id="bottom-image">
+              <div>
                 <div>
-                    <img src="static/png/image-femme-2.png" alt="Woman in video call"  />
-                    <div id="bottom-image">
-                        <div>
-                            <div>
-                                <img src="static/svg/repeate-icon.svg" alt="Repeat icon" />
-                                <img src="static/svg/white-camera-icon.svg" alt="Camera icon" />
-                            </div>
-                            <div>
-                                <img src="static/svg/call-icon.svg" alt="Call icon" />
-                            </div>
-                        </div>
-                        <div>
-                            <img src="static/svg/like-icon.svg" alt="Like icon" />
-                        </div>
-                    </div>
+                  <img src="static/svg/repeate-icon.svg" alt="Repeat icon" />
+                  <img
+                    src="static/svg/white-camera-icon.svg"
+                    alt="Camera icon"
+                  />
                 </div>
                 <div>
-                    <h1>Meet your customers, with live video chat</h1>
-                    <p>Great software that allows you to chat from any place at any time without any interruption. Great software that allows you to chat from any place at any time without any interruption. Great software that allows you to chat from any place at any time without any interruption.</p>
+                  <img src="static/svg/call-icon.svg" alt="Call icon" />
                 </div>
-            </article>
-        </section>
-        <section>
-            <article>
-                <div>
-                    <h1>Start selling directly inside conversations</h1>
-                    <p>Great software that allows you to chat from any place at any time without any interruption.</p>
-                    <my-button text="Start chatting now"></my-button>
-                </div>
-                <img src="static/png/mockup1.png" alt="Mockup"  />
-            </article>
-        </section>
-        <section>
-            <article>
-                <img src="static/png/mockup2.png" alt="Mockup" width="460px" />
-                <div>
-                    <h1>Get direct orders from your customers</h1>
-                    <p>Great software that allows you to chat from any place at any time without any interruption.</p>
-                    <div>
-                        <div>
-                            <p>4.3K+</p>
-                            <p>Websites powering</p>
-                        </div>
-                        <div>
-                            <p>7M+</p>
-                            <p>Chats in last 2022</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section>
-            <article>
-                <h2>What our customers are saying</h2>
-                <div>
-                    <div>
-                        <p>“The best UI kit for developers. So easy to implement and publish.”</p>
-                        <div>
-                            <img src="static/png/photo2.png" alt="Profile photo" />
-                            <div>
-                                <p>Eli Json</p>
-                                <p>Medical assistant</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <p>“Rareblocks helps you optimize for engagement.”</p>
-                        <div>
-                            <img src="static/png/photo1.png" alt="Profile photo" />
-                            <div>
-                                <p>Eli Json</p>
-                                <p>Medical assistant</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section>
-            <article>
-                <h2>Ready to grow your business? Start with our application, become faster every second</h2>
-                <my-button text="Start chatting now"></my-button>
-            </article>
-        </section>
-        <footer>
-            <div>
-                <nav>
-                    <div class="logo">
-                        <img src="static/svg/icon.svg" alt="Application Logo" />
-                        <p>Chat Application</p>
-                    </div>
-                    <ul class="menu">
-                        <li><a href="#">Demos</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <ul class="network">
-                        <li><a href="#"><img src="static/svg/google-icon.svg" alt="Google"></a></li>
-                        <li><a href="#"><img src="static/svg/framer-icon.svg" alt="Framer"></a></li>
-                        <li><a href="#"><img src="static/svg/facebook-icon.svg" alt="Facebook"></a></li>
-                        <li><a href="#"><img src="static/svg/whatsapp-icon.svg" alt="WhatsApp"></a></li>
-                        <li><a href="#"><img src="static/svg/youtube-icon.svg" alt="YouTube"></a></li>
-                    </ul>
-                </nav>
-                <div></div>
-                <div>
-                    <p>Copyright 2021, all rights reserved</p>
-                    <div>
-                        <p>Privacy policy</p>
-                        <p>Terms & conditions</p>
-                    </div>
-                </div>
+              </div>
+              <div>
+                <img src="static/svg/like-icon.svg" alt="Like icon" />
+              </div>
             </div>
-        </footer>
+          </div>
+          <div>
+            <h1>Meet your customers, with live video chat</h1>
+            <p>
+              Great software that allows you to chat from any place at any time
+              without any interruption. Great software that allows you to chat
+              from any place at any time without any interruption. Great
+              software that allows you to chat from any place at any time
+              without any interruption.
+            </p>
+          </div>
+        </article>
+      </section>
+      <section id="demo">
+        <article>
+          <div>
+            <h1>Start selling directly inside conversations</h1>
+            <p>
+              Great software that allows you to chat from any place at any time
+              without any interruption.
+            </p>
+            <my-button role="button" text="Start chatting now"></my-button>
+          </div>
+          <img
+            src="static/png/mockup1.png"
+            alt="message conversation between two people"
+            loading="lazy"
+          />
+        </article>
+      </section>
+      <section>
+        <article>
+          <img
+            src="static/png/mockup2.png"
+            alt="inbox combining several applications"
+            width="460px"
+            loading="lazy"
+          />
+          <div>
+            <h1>Get direct orders from your customers</h1>
+            <p>
+              Great software that allows you to chat from any place at any time
+              without any interruption.
+            </p>
+            <div>
+              <div>
+                <p>4.3K+</p>
+                <p>Websites powering</p>
+              </div>
+              <div>
+                <p>7M+</p>
+                <p>Chats in last 2022</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section id="blog">
+        <article>
+          <h2>What our customers are saying</h2>
+          <div>
+            <div>
+              <p>
+                “The best UI kit for developers. So easy to implement and
+                publish.”
+              </p>
+              <div>
+                <img src="static/png/photo2.png" alt="Profile photo" />
+                <div>
+                  <p>Eli Json</p>
+                  <p>Medical assistant</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p>“Rareblocks helps you optimize for engagement.”</p>
+              <div>
+                <img src="static/png/photo1.png" alt="Profile photo" />
+                <div>
+                  <p>Eli Json</p>
+                  <p>Medical assistant</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section>
+        <article>
+          <h2>
+            Ready to grow your business? Start with our application, become
+            faster every second
+          </h2>
+          <my-button role="button" text="Start chatting now"></my-button>
+        </article>
+      </section>
+      <footer id="contact">
+        <div>
+          <nav>
+            <div class="logo">
+              <img src="static/svg/icon.svg" alt="logo application" />
+              <p>Chat Application</p>
+            </div>
+            <ul class="menu">
+              <li><a href="#demo">Demos</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#page">Pages</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="network">
+              <li>
+                <a href="#"
+                  ><img src="static/svg/google-icon.svg" alt="Google"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="static/svg/framer-icon.svg" alt="Framer"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="static/svg/facebook-icon.svg" alt="Facebook"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="static/svg/whatsapp-icon.svg" alt="WhatsApp"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img src="static/svg/youtube-icon.svg" alt="YouTube"
+                /></a>
+              </li>
+            </ul>
+          </nav>
+          <div></div>
+          <div>
+            <p>Copyright 2021, all rights reserved</p>
+            <div>
+              <p>Privacy policy</p>
+              <p>Terms & conditions</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
-</body>
+  </body>
 </html>
