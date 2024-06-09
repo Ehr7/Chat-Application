@@ -140,9 +140,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const menu = document.querySelector('.menu');
     const action = document.querySelector('.action');
 
+    let clonedMenu = menu.cloneNode(true);
+    let clonedAction = action.cloneNode(true);
+
     
-    menuWrapper.appendChild(menu);
-    menuWrapper.appendChild(action);
+    menuWrapper.appendChild(clonedMenu);
+    menuWrapper.appendChild(clonedAction);
 
     hamburger.addEventListener('click', () => {
         console.log("Toggling menu");
@@ -161,3 +164,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
   
+function animateCounter() {
+    const counter = document.getElementById('count');
+    const targetCount = parseInt(counter.getAttribute('data-target'), 10);  
+    const duration = 20000; 
+    let currentCount = 0;  
+
+    const stepTime = Math.max(Math.floor(duration / targetCount), 1);  
+
+    const timer = setInterval(() => {
+        currentCount += Math.ceil(targetCount / (duration / 100));  
+        counter.innerText = currentCount.toLocaleString('en-US');  
+        if (currentCount >= targetCount) {
+            clearInterval(timer);  
+            counter.innerText = targetCount.toLocaleString('en-US');  
+        }
+    }, stepTime); 
+}
+
+window.onload = animateCounter;

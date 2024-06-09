@@ -107,6 +107,9 @@ nav .action a {
 nav .hamburger {
   display: none;
 }
+nav #menu-wrapper {
+  display: none;
+}
 @media (max-width: 600px) {
   nav #menu-wrapper {
     position: fixed;

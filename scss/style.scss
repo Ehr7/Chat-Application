@@ -5,6 +5,7 @@
   }
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -97,6 +98,10 @@ nav {
   }
 
   .hamburger {
+    display: none;
+  }
+
+  #menu-wrapper{
     display: none;
   }
 
