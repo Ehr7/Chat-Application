@@ -23,15 +23,13 @@ body {
   font-family: $font-family-body;
 }
 
-#container {
+
+header {
+  background-color: $background-color-white;
   padding: $padding-container;
   @include for-phone-only {
     padding: 24px 0px 0px;
   }
-}
-
-header {
-  background-color: $background-color-white;
 }
 
 nav {
@@ -171,7 +169,7 @@ nav {
 
 h1 {
   font-family: $font-family-heading;
-  font-size: $size-40;
+  font-size: 2.5rem;
   font-weight: $font-weight-600;
   line-height: $line-height-h1;
   @include for-phone-only {
@@ -181,7 +179,7 @@ h1 {
 
 h2 {
   font-family: $font-family-heading;
-  font-size: $font-size-h2;
+  font-size: 1.9rem;
   font-weight: $font-weight-600;
   text-align: center;
   @include for-phone-only {
@@ -202,9 +200,10 @@ p {
   padding: $section-padding;
   gap: $section-gap;
   isolation: isolate;
-
-  @include desktop{
-    gap: 210px;
+  @include desktop() {
+   width: 100%;
+   align-items: center;
+   justify-content: space-around
   }
 
   @include for-phone-only {
@@ -251,7 +250,7 @@ p {
     }
 
     p {
-      font-size: 18px;
+      font-size: 1.13rem;
     }
   }
 }
@@ -318,7 +317,7 @@ p {
       }
     }
 
-    div {
+    > div {
       position: absolute;
       width: $size-350;
       height: $size-350;
@@ -349,91 +348,113 @@ p {
         }
       }
     }
-  }
 
-  aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: $article2-aside-padding;
-    gap: $size-10;
-    background: $background-color-white;
-    box-shadow: $article2-aside-box-shadow;
-    border-radius: $article2-aside-radius;
-    @include for-phone-only {
-      display: none;
-    }
-    img {
-      width: $size-45;
-      height: $size-45;
-    }
-
-    p {
-      line-height: 22px;
-    }
-
-    div {
+    aside {
       display: flex;
-      align-items: center;
-      gap: $size-24;
-      font-weight: 700;
-    }
-
-    &:first-of-type {
-      position: absolute;
-      left: $article2-aside-first-left;
-      top: $article2-aside-first-top;
-      z-index: 4;
-      width: $article2-aside-first-width;
-      height: $size-138;
-
-      @include desktop{
-        left : 730px
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: $article2-aside-padding;
+      gap: $size-10;
+      background: $background-color-white;
+      box-shadow: $article2-aside-box-shadow;
+      border-radius: $article2-aside-radius;
+      @include for-phone-only {
+        display: none;
       }
-    }
-
-    &:last-of-type {
-      position: absolute;
-      left: $article2-aside-last-left;
-      top: $article2-aside-last-top;
-      z-index: 4;
-      width: $size-250;
-      height: $article2-aside-last-height;
-      @include desktop{
-        left : 1175px
+      img {
+        width: $size-45;
+        height: $size-45;
       }
-
+  
+      p {
+        line-height: 22px;
+      }
+  
       div {
-        gap: $article2-aside-last-gap;
-
+        display: flex;
+        align-items: center;
+        gap: $size-24;
+        font-weight: 700;
+      }
+  
+      &:first-of-type {
+        position: absolute;
+        right: 260px;
+        top: 320px;
+        z-index: 4;
+        width: $article2-aside-first-width;
+        height: $size-138;
+      }
+  
+      &:last-of-type {
+        position: absolute;
+        left: 410px;
+        top: 268px;
+        z-index: 4;
+        width: $size-250;
+        height: $article2-aside-last-height;
+  
+        div {
+          gap: $article2-aside-last-gap;
+  
+          p {
+            font-size: 0.75rem;
+            line-height: $size-16;
+          }
+  
+          img {
+            width: $size-35;
+            height: $size-35;
+          }
+        }
+  
         p {
-          font-size: $article2-aside-last-p-font-size;
+          font-size: 0.75rem;
           line-height: $size-16;
         }
-
-        img {
-          width: $size-35;
-          height: $size-35;
-        }
-      }
-
-      p {
-        font-size: $article2-aside-last-p-font-size;
-        line-height: $size-16;
       }
     }
   }
+
+  
 }
 
 #page-content {
   background-color: $background-color-page;
 
+  section:nth-of-type(2),
+  section:nth-of-type(3),
+  section:nth-of-type(4) {
+    padding: $padding-section-0;
+    @include for-phone-only {
+      padding: 40px 32px;
+    }
+
+    article{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $size-100;
+    }
+  }
+
+  section:nth-of-type(5),
+  section:nth-of-type(6){
+    article {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: $padding-section-0;
+      gap: $size-40;
+      @include for-phone-only {
+        padding: 40px 32px;
+      }
+    }
+  }
+
   section:first-of-type {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: $padding-section;
     gap: $size-58;
     @include for-phone-only {
@@ -454,21 +475,8 @@ p {
   }
 
   section:nth-of-type(2) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: $padding-section-0;
     background-color: $background-color-white;
-    @include for-phone-only {
-      padding: 40px 32px;
-    }
-
     article {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: $size-100;
       @include for-phone-only {
         flex-direction: column;
         gap: 60px;
@@ -505,28 +513,14 @@ p {
         }
 
         p {
-          font-size: $size-18;
+          font-size: 1.13rem;
         }
       }
     }
   }
 
   section:nth-of-type(3) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: $padding-section-0;
-    @include for-phone-only {
-      padding: 40px 32px;
-    }
-
     article {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: $size-100;
       img {
         width: 460px;
       }
@@ -555,36 +549,19 @@ p {
 
         h1 {
           align-self: stretch;
-          height: $size-86;
+          
         }
 
         p {
-          font-size: $size-18;
-          height: $size-64;
-          @include for-phone-only {
-            height: auto;
-          }
+          font-size: 1.13rem;
         }
       }
     }
   }
 
   section:nth-of-type(4) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: $padding-section-0;
-    @include for-phone-only {
-      padding: 40px 32px;
-    }
-
+    
     article {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: $size-100;
       @include for-phone-only {
         gap: 60px;
         flex-direction: column;
@@ -605,12 +582,10 @@ p {
         }
         > h1 {
           align-self: stretch;
-          height: $size-86;
         }
 
         > p {
-          font-size: $size-18;
-          height: $size-64;
+          font-size: 1.13rem;
           @include for-phone-only {
             height: auto;
           }
@@ -622,7 +597,7 @@ p {
           justify-content: center;
           align-items: center;
           gap: $gap-inner-div-4;
-          width: $inner-div-width-4;
+          width: 330px;
 
           > div {
             display: flex;
@@ -636,7 +611,7 @@ p {
             }
 
             p {
-              font-size: $size-16;
+              font-size: 1.13rem;
               line-height: $size-19;
             }
           }
@@ -646,19 +621,9 @@ p {
   }
 
   section:nth-of-type(5) {
+    background-color: $color-blue;
+    color: $color-text-section-5;
     article {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: $padding-section-0;
-      gap: $size-40;
-      background-color: $color-blue;
-      color: $color-text-section-5;
-      @include for-phone-only {
-        padding: 40px 32px;
-      }
-
       > div {
         display: flex;
         flex-direction: row;
@@ -683,7 +648,7 @@ p {
 
           > p {
             font-weight: $font-weight-700;
-            font-size: $p-font-size-5;
+            font-size: 1.5rem;
             line-height: $size-32;
           }
 
@@ -706,7 +671,7 @@ p {
 
               > p {
                 font-size: $p-font-size-inner-5;
-                line-height: $size-16;
+                line-height: 1rem;
               }
             }
           }
@@ -717,22 +682,10 @@ p {
 
   section:nth-of-type(6) {
     article {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: $padding-section-0;
-      gap: $size-40;
-      @include for-phone-only {
-        padding: 40px 32px;
-      }
-
       h2 {
         width: $h2-width-6;
-        height: $size-138;
         @include for-phone-only {
           width: auto;
-          height: auto;
         }
       }
     }
@@ -815,17 +768,15 @@ footer {
 }
 
 #card-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: $size-40;
   padding: $section-padding;
+
   @include for-phone-only {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 0;
   }
 }
 

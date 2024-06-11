@@ -9,21 +9,20 @@ class MyButton extends HTMLElement {
 
     const style = document.createElement("style");
     style.textContent = `
-            .button {
-                padding: 11.5px 25.5px;
-                background-color: #2B59FF;
-                color: white;
-                border-radius: 4px;
-                border: none;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-
-            .button:hover {
-                background-color: #1A3EB1;
-            }
-        `;
+        .button {
+          padding: 11.5px 25.5px;
+          background-color: #2B59FF;
+          color: white;
+          border-radius: 4px;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+        .button:hover {
+          background-color: #1A3EB1;
+        }
+      `;
 
     this.shadowRoot.append(style, button);
   }
@@ -74,7 +73,6 @@ class CardComponent extends HTMLElement {
           border-radius: 8px;
           height: fit-content;
         }
-
         .card-content {
           display: flex;
           flex-direction: column;
@@ -93,11 +91,11 @@ class CardComponent extends HTMLElement {
         .card-header .title {
           font-size: 20px;
           font-weight: 700;
-          margin: 0; 
+          margin: 0;
         }
         .card-content .text {
           font-size: 18px;
-          margin: 0; 
+          margin: 0;
           line-height: 32px;
         }
       `;
@@ -133,98 +131,91 @@ class CardComponent extends HTMLElement {
 customElements.define("card-component", CardComponent);
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.querySelector('.hamburger');
-    const menuWrapper = document.getElementById('menu-wrapper');
-    const menuClose = document.querySelector('.menu-close');
-    const menu = document.querySelector('.menu');
-    const action = document.querySelector('.action');
-    const body = document.body;
-    let overlay = document.createElement('div');
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const menuWrapper = document.getElementById("menu-wrapper");
+  const menuClose = document.querySelector(".menu-close");
+  const menu = document.querySelector(".menu");
+  const action = document.querySelector(".action");
+  const body = document.body;
+  let overlay = document.createElement("div");
 
-    let clonedMenu = menu.cloneNode(true);
-    let clonedAction = action.cloneNode(true);
+  let clonedMenu = menu.cloneNode(true);
+  let clonedAction = action.cloneNode(true);
+  menuWrapper.appendChild(clonedMenu);
+  menuWrapper.appendChild(clonedAction);
 
-    menuWrapper.appendChild(clonedMenu);
-    menuWrapper.appendChild(clonedAction);
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(0,0,0,0.5)";
+  overlay.style.zIndex = "999";
+  overlay.style.display = "none";
 
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
-    overlay.style.zIndex = '999'; 
-    overlay.style.display = 'none';
+  function openMenu() {
+    body.appendChild(overlay);
+    overlay.style.display = "block";
+    menuWrapper.style.transform = "translateX(0%)";
+    menuWrapper.classList.add("menu-open");
+  }
 
-   
-   
-    hamburger.addEventListener('click', () => {
-        console.log("Toggling menu");
-        if (menuWrapper.classList.contains('menu-open')) {
-            menuWrapper.classList.remove('menu-open');
-            overlay.style.display = 'none';
-            setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 100); 
-            body.removeChild(overlay);
-        } else {
-            body.appendChild(overlay); 
-            overlay.style.display = 'block'; 
-            menuWrapper.style.transform = 'translateX(0%)';
-            menuWrapper.classList.add('menu-open');
-        }
-    });
+  function closeMenu() {
+    menuWrapper.classList.remove("menu-open");
+    overlay.style.display = "none";
+    setTimeout(() => {
+      menuWrapper.style.transform = "translateX(100%)";
+      body.removeChild(overlay);
+    }, 100);
+  }
 
-    
-    overlay.addEventListener('click', () => {
-        menuWrapper.classList.remove('menu-open');
-        setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 100);
-        overlay.style.display = 'none'; 
-        body.removeChild(overlay);
-    });
+  hamburger.addEventListener("click", () => {
+    if (menuWrapper.classList.contains("menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
 
-    
-    menuClose.addEventListener('click', () => { 
-        menuWrapper.classList.remove('menu-open');
-        setTimeout(() => { menuWrapper.style.transform = 'translateX(100%)'; }, 100); 
-        overlay.style.display = 'none'; 
-        body.removeChild(overlay);
-    });
+  overlay.addEventListener("click", closeMenu);
+  menuClose.addEventListener("click", closeMenu);
 });
 
-  
+
+
 function animateCounter() {
-    const counter = document.getElementById('count');
-    const targetCount = parseInt(counter.getAttribute('data-target'), 10);  
-    const duration = 20000; 
-    let currentCount = 0;  
+  const counter = document.getElementById("count");
+  const targetCount = parseInt(counter.getAttribute("data-target"), 10);
+  const duration = 20000;
+  let currentCount = 0;
 
-    const stepTime = Math.max(Math.floor(duration / targetCount), 1);  
+  const stepTime = Math.max(Math.floor(duration / targetCount), 1);
 
-    const timer = setInterval(() => {
-        currentCount += Math.ceil(targetCount / (duration / 100));  
-        counter.innerText = currentCount.toLocaleString('en-US');  
-        if (currentCount >= targetCount) {
-            clearInterval(timer);  
-            counter.innerText = targetCount.toLocaleString('en-US');  
-        }
-    }, stepTime); 
+  const timer = setInterval(() => {
+    currentCount += Math.ceil(targetCount / (duration / 100));
+    counter.innerText = currentCount.toLocaleString("en-US");
+    if (currentCount >= targetCount) {
+      clearInterval(timer);
+      counter.innerText = targetCount.toLocaleString("en-US");
+    }
+  }, stepTime);
 }
 
 window.onload = animateCounter;
 
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault(); 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
 
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop, 
-          behavior: 'smooth' 
-        });
-      }
-    });
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
   });
+});
