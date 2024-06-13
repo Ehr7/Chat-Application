@@ -423,9 +423,9 @@ p {
 #page-content {
   background-color: $background-color-page;
 
-  section:nth-of-type(2),
-  section:nth-of-type(3),
-  section:nth-of-type(4) {
+  #about,
+  #demo,
+  #exemple {
     padding: $padding-section-0;
     @include for-phone-only {
       padding: 40px 32px;
@@ -439,8 +439,8 @@ p {
     }
   }
 
-  section:nth-of-type(5),
-  section:nth-of-type(6){
+  #blog,
+  #appli{
     article {
       display: flex;
       flex-direction: column;
@@ -454,7 +454,7 @@ p {
     }
   }
 
-  section:first-of-type {
+  #page {
     padding: $padding-section;
     gap: $size-58;
     @include for-phone-only {
@@ -474,7 +474,7 @@ p {
     }
   }
 
-  section:nth-of-type(2) {
+  #about{
     background-color: $background-color-white;
     article {
       @include for-phone-only {
@@ -519,7 +519,7 @@ p {
     }
   }
 
-  section:nth-of-type(3) {
+  #demo {
     article {
       img {
         width: 460px;
@@ -559,7 +559,7 @@ p {
     }
   }
 
-  section:nth-of-type(4) {
+  #exemple{
     
     article {
       @include for-phone-only {
@@ -620,7 +620,7 @@ p {
     }
   }
 
-  section:nth-of-type(5) {
+  #blog {
     background-color: $color-blue;
     color: $color-text-section-5;
     article {
@@ -680,7 +680,7 @@ p {
     }
   }
 
-  section:nth-of-type(6) {
+  #appli{
     article {
       h2 {
         width: $h2-width-6;
@@ -693,6 +693,7 @@ p {
 }
 
 footer {
+  background-color: $background-color-page;
   display: flex;
   flex-direction: column;
   justify-content: center;
