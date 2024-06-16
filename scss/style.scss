@@ -1,6 +1,6 @@
 @import "variables";
-@mixin for-phone-only {
-  @media (max-width: 600px) {
+@mixin  small-devices {
+  @media (max-width: 768px) {
     @content;
   }
 }
@@ -27,7 +27,7 @@ body {
 header {
   background-color: $background-color-white;
   padding: $padding-container;
-  @include for-phone-only {
+  @include  small-devices {
     padding: 24px 0px 0px;
   }
 }
@@ -37,7 +37,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding-bottom: $size-32;
-  @include for-phone-only {
+  @include  small-devices {
     padding: 6px 32px;
   }
 
@@ -109,7 +109,7 @@ nav {
     display: none;
   }
 
-  @include for-phone-only {
+  @include  small-devices {
     #menu-wrapper {
       position: fixed;
       top: 0;
@@ -172,7 +172,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: $font-weight-600;
   line-height: $line-height-h1;
-  @include for-phone-only {
+  @include  small-devices {
     font-size: 30px;
   }
 }
@@ -182,7 +182,7 @@ h2 {
   font-size: 1.9rem;
   font-weight: $font-weight-600;
   text-align: center;
-  @include for-phone-only {
+  @include  small-devices {
     font-size: $size-24;
   }
 }
@@ -206,7 +206,7 @@ p {
    justify-content: space-around
   }
 
-  @include for-phone-only {
+  @include  small-devices {
     gap: 40px;
     padding: 0px;
     flex-direction: column;
@@ -220,7 +220,7 @@ p {
   flex-direction: column;
   justify-content: flex-start;
 
-  @include for-phone-only {
+  @include  small-devices {
     padding: 0px 32px;
   }
 
@@ -233,7 +233,7 @@ p {
       gap: $size-24;
       padding-top: $size-58;
       width: $size-450;
-      @include for-phone-only {
+      @include  small-devices {
         width: auto;
       }
     }
@@ -289,7 +289,7 @@ p {
 
 #article-2 {
   width: $article2-width;
-  @include for-phone-only {
+  @include  small-devices {
     width: 342px;
     justify-self: center;
     align-self: center;
@@ -299,7 +299,7 @@ p {
     position: relative;
     width: $article2-div-width;
     height: $size-509;
-    @include for-phone-only {
+    @include  small-devices {
       width: 342px;
       height: 433px;
     }
@@ -309,7 +309,7 @@ p {
       height: $size-509;
       left: $article2-img-left;
       z-index: 3;
-      @include for-phone-only {
+      @include  small-devices {
         width: 298px;
         height: 433px;
         left: 20px;
@@ -322,7 +322,7 @@ p {
       width: $size-350;
       height: $size-350;
       border-radius: 50%;
-      @include for-phone-only {
+      @include  small-devices {
         width: 313px;
         height: 313px;
       }
@@ -332,7 +332,7 @@ p {
         top: $article2-div1-top;
         border: $article2-div1-border;
         z-index: 2;
-        @include for-phone-only {
+        @include  small-devices {
           left: 28px;
           top: 28px;
         }
@@ -342,7 +342,7 @@ p {
         left: $article2-div2-left;
         top: $article2-div2-top;
         background-color: $article2-div2-bg-color;
-        @include for-phone-only {
+        @include  small-devices {
           left: 0;
           top: 45px;
         }
@@ -359,7 +359,7 @@ p {
       background: $background-color-white;
       box-shadow: $article2-aside-box-shadow;
       border-radius: $article2-aside-radius;
-      @include for-phone-only {
+      @include  small-devices {
         display: none;
       }
       img {
@@ -427,7 +427,7 @@ p {
   #demo,
   #exemple {
     padding: $padding-section-0;
-    @include for-phone-only {
+    @include  small-devices {
       padding: 40px 32px;
     }
 
@@ -448,7 +448,7 @@ p {
       align-items: center;
       padding: $padding-section-0;
       gap: $size-40;
-      @include for-phone-only {
+      @include  small-devices {
         padding: 40px 32px;
       }
     }
@@ -457,7 +457,7 @@ p {
   #page {
     padding: $padding-section;
     gap: $size-58;
-    @include for-phone-only {
+    @include  small-devices {
       flex-direction: column;
       padding: 40px 32px;
 
@@ -477,7 +477,7 @@ p {
   #about{
     background-color: $background-color-white;
     article {
-      @include for-phone-only {
+      @include  small-devices {
         flex-direction: column;
         gap: 60px;
       }
@@ -486,14 +486,14 @@ p {
         position: relative;
         width: $size-460;
         height: $div1-height;
-        @include for-phone-only {
+        @include  small-devices {
           width: 384px;
           height: 269px;
         }
         > img {
           width: $size-460;
           height: $div1-height;
-          @include for-phone-only {
+          @include  small-devices {
             width: 384px;
             height: 269px;
           }
@@ -507,7 +507,7 @@ p {
         align-items: flex-start;
         gap: $size-24;
         width: $size-460;
-        @include for-phone-only {
+        @include  small-devices {
           width: auto;
           align-items: center;
         }
@@ -525,7 +525,7 @@ p {
         width: 460px;
       }
 
-      @include for-phone-only {
+      @include  small-devices {
         flex-direction: column;
         gap: 50px;
         img {
@@ -541,7 +541,7 @@ p {
         gap: $size-24;
         width: $size-460;
 
-        @include for-phone-only {
+        @include  small-devices {
           order: 2;
           width: auto;
           gap: 20px;
@@ -562,7 +562,7 @@ p {
   #exemple{
     
     article {
-      @include for-phone-only {
+      @include  small-devices {
         gap: 60px;
         flex-direction: column;
         img {
@@ -577,7 +577,7 @@ p {
         align-items: flex-start;
         gap: $size-24;
         width: $size-460;
-        @include for-phone-only {
+        @include  small-devices {
           width: auto;
         }
         > h1 {
@@ -586,7 +586,7 @@ p {
 
         > p {
           font-size: 1.13rem;
-          @include for-phone-only {
+          @include  small-devices {
             height: auto;
           }
         }
@@ -630,8 +630,9 @@ p {
         justify-content: space-between;
         align-items: center;
         gap: $gap-div-5;
-        @include for-phone-only {
+        @include  small-devices {
           flex-direction: column;
+          align-items:initial;
         }
 
         > div {
@@ -642,8 +643,9 @@ p {
           gap: $size-24;
           width: $size-450;
           margin: $inner-div-margin;
-          @include for-phone-only {
+          @include  small-devices {
             width: auto;
+            margin: 0;
           }
 
           > p {
@@ -684,7 +686,7 @@ p {
     article {
       h2 {
         width: $h2-width-6;
-        @include for-phone-only {
+        @include  small-devices {
           width: auto;
         }
       }
@@ -700,7 +702,7 @@ footer {
   align-items: center;
   padding: $padding-section-0;
 
-  @include for-phone-only {
+  @include  small-devices {
     padding: 40px 32px;
   }
 
@@ -719,7 +721,7 @@ footer {
       align-items: center;
       gap: $gap-footer-nav;
       padding: 0px;
-      @include for-phone-only {
+      @include  small-devices {
         flex-direction: column;
         gap: $size-32;
         .menu {
@@ -733,7 +735,7 @@ footer {
     > div:first-of-type {
       width: $width-footer-div-first;
       border: $border-footer-div-first;
-      @include for-phone-only {
+      @include  small-devices {
         width: 100%;
         border-top: 1px solid #ccc;
       }
@@ -749,7 +751,7 @@ footer {
       justify-content: center;
       align-items: center;
       gap: $gap-footer-div-last;
-      @include for-phone-only {
+      @include  small-devices {
         flex-direction: column;
         gap: 20px;
         p {
@@ -774,7 +776,7 @@ footer {
   gap: $size-40;
   padding: $section-padding;
 
-  @include for-phone-only {
+  @include  small-devices {
     grid-template-columns: 1fr;
     justify-items: center;
     padding: 0;
@@ -790,7 +792,7 @@ footer {
   background-color: $bottom-image-bg-color;
   width: 100%;
   padding: $bottom-image-padding;
-  @include for-phone-only() {
+  @include  small-devices() {
     padding: 12px 38px;
     gap: 108px;
   }
@@ -801,7 +803,7 @@ footer {
     align-items: center;
     gap: $size-47;
 
-    @include for-phone-only() {
+    @include  small-devices() {
     }
 
     > div:first-of-type {
@@ -809,7 +811,7 @@ footer {
       justify-content: center;
       align-items: center;
       gap: $gap-bottom-image-div-inner;
-      @include for-phone-only() {
+      @include  small-devices() {
         gap: $size-47;
       }
     }
